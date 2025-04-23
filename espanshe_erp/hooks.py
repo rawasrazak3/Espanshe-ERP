@@ -213,3 +213,79 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"espanshe_erp.auth.validate"
 # ]
+
+
+
+
+
+fixtures = [
+    {
+        "doctype": "Custom Field", 
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Item-custom_company",
+                    "Item-custom_col_brk",
+                    "Item-custom_sec_brk",
+                    "Item-custom_color",
+                    "Item-custom_material_type",
+                    "Item-custom_style",
+                    "Item-custom_size",
+                    "Item-custom_fit",
+                    "Item-custom_type",
+                    "Sales Invoice Item-custom_valuation_rate",
+                    "Purchase Invoice Item-custom_create_batch",
+                    "Purchase Order Item-custom_attach_image",
+                    "Purchase Receipt Item-custom_attach_image",
+                    "Purchase Invoice Item-custom_attach_image",
+                    "Sales Invoice Item-custom_valuation_rate",
+                    "Purchase Invoice Item-custom_create_batch",
+                    "Supplier-custom_company"
+                    
+                ]
+            ]                         
+        ]
+    },
+    {
+    "doctype": "Property Setter",
+    "filters":[
+        [
+            "name",
+            "in",
+            [
+                "Purchase Receipt Item-description-in_list_view",
+                "Purchase Receipt-item_name-in_list_view",
+                "Purchase Order Item-description-in_list_view",
+                "Purchase Order Item-item_name-in_list_view",
+                "Purchase Invoice Item-item_name-in_list_view",
+                "Purchase Invoice Item-item_name-in_list_view",
+                "Sales Order Item-description-in_list_view",
+                "Sales Order Item-item_name-in_list_view",
+                "Delivery Note Item-item_name-in_list_view",
+                "Delivery Note Item-description-in_list_view",
+                "Sales Invoice Item-description-in_list_view",
+                "Sales Invoice Item-item_name-in_list_view",
+                
+
+            ]
+        ]
+    ]
+    },
+    
+]
+
+
+doc_events = {
+    "Item": {
+        "before_insert": "espanshe_erp.espanshe_erp.custom_script.item.item_naming"
+    },
+     "Purchase Invoice": {
+        "before_submit": "espanshe_erp.espanshe_erp.custom_script.purchase_invoice.create_batches_for_items",
+    },
+
+}
+
+
+
