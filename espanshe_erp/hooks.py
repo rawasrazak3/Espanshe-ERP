@@ -242,7 +242,8 @@ fixtures = [
                     "Purchase Invoice Item-custom_attach_image",
                     "Sales Invoice Item-custom_valuation_rate",
                     "Purchase Invoice Item-custom_create_batch",
-                    "Supplier-custom_company"
+                    "Supplier-custom_company",
+                    "Item-custom_demo_field"
                     
                 ]
             ]                         
