@@ -214,6 +214,9 @@ app_license = "MIT"
 # 	"espanshe_erp.auth.validate"
 # ]
 
+doctype_js = {
+    "Supplier": "public/js/supplier.js"
+}
 
 
 
@@ -243,7 +246,7 @@ fixtures = [
                     "Sales Invoice Item-custom_valuation_rate",
                     "Purchase Invoice Item-custom_create_batch",
                     "Supplier-custom_company",
-                    "Item-custom_demo_field"
+                    "Item-custom_demo_field",
                     
                 ]
             ]                         
@@ -268,6 +271,9 @@ fixtures = [
                 "Delivery Note Item-description-in_list_view",
                 "Sales Invoice Item-description-in_list_view",
                 "Sales Invoice Item-item_name-in_list_view",
+                "Purchase Invoice Item-description-in_list_view",
+                "Supplier-custom_company-in_standard_filter",
+                "Sales Invoice Item-batch_no-in_list_view"
                 
 
             ]
