@@ -215,7 +215,9 @@ app_license = "MIT"
 # ]
 
 doctype_js = {
-    "Supplier": "public/js/supplier.js"
+    "Sales Invoice": "public/js/sales_invoice.js",
+    "Item": "public/js/item.js",
+
 }
 
 
@@ -239,14 +241,15 @@ fixtures = [
                     "Item-custom_fit",
                     "Item-custom_type",
                     "Sales Invoice Item-custom_valuation_rate",
-                    "Purchase Invoice Item-custom_create_batch",
                     "Purchase Order Item-custom_attach_image",
                     "Purchase Receipt Item-custom_attach_image",
                     "Purchase Invoice Item-custom_attach_image",
-                    "Sales Invoice Item-custom_valuation_rate",
-                    "Purchase Invoice Item-custom_create_batch",
                     "Supplier-custom_company",
                     "Item-custom_demo_field",
+                    "Customer-custom_comapny",
+                    "Stock Entry-custom_job_card_reference",
+                    "Stock Entry-custom_supplier"
+
                     
                 ]
             ]                         
@@ -280,19 +283,32 @@ fixtures = [
         ]
     ]
     },
+     {
+    "doctype": "Document Naming Rule",
+    "filters":[
+        [
+            "name",
+            "in",
+            [
+                "8ok6dns7l4",
+               
+            ]
+        ]
+    ]
+    },
     
 ]
 
 
 doc_events = {
     "Item": {
-        "before_insert": "espanshe_erp.espanshe_erp.custom_script.item.item_naming"
+        "before_insert": "espanshe_erp.espanshe_erp.custom_script.item.item_naming",
     },
-     "Purchase Invoice": {
-        "before_submit": "espanshe_erp.espanshe_erp.custom_script.purchase_invoice.create_batches_for_items",
-    },
-
 }
 
 
+override_doctype_class = {
+    "Batch": "espanshe_erp.espanshe_erp.custom_script.batch.CustomBatch",
+    "Item": "espanshe_erp.espanshe_erp.custom_script.item.CustomItem"
+}
 
