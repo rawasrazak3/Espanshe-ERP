@@ -32,10 +32,10 @@ class CustomItem(Item):
             super().autoname()
 
 @frappe.whitelist()
-def set_barcode_based_on_series(item_name, naming_series=None):
+def set_barcode_based_on_series(item_name):
     item = frappe.get_doc("Item", item_name)
     if item.get("custom_company") != "FAHI TRADING LLP":
-        barcode_value = naming_series or item.name
+        barcode_value = item.name
 
         item.set("barcodes", [])
 
