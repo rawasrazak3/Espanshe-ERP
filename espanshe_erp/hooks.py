@@ -283,20 +283,6 @@ fixtures = [
         ]
     ]
     },
-     {
-    "doctype": "Document Naming Rule",
-    "filters":[
-        [
-            "name",
-            "in",
-            [
-                "8ok6dns7l4",
-               
-            ]
-        ]
-    ]
-    },
-    
 ]
 
 
